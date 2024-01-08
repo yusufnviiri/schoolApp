@@ -1,18 +1,99 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    color: greenyellow;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.form-floating input {
+    height: 10%;
+}
+
+tbody tr {
+    font-size: 10px;
+    color: darkgoldenrod;
+}
+
+h5 {
+    color: darkgoldenrod;
+    font-size: medium;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+}
+
+thead tr {
+    font-size: 10px;
+    color: forestgreen;
+}
+
+menu ul {
+    display: flex;
+    width: 40%;
+}
+
+    menu ul li {
+        list-style: none;
+        margin-right: 0.3em;
+    }
+
+        menu ul li a, menu ul li a span {
+            list-style: none;
+            font-size: 0.75em;
+            background-color: darkslategrey;
+            color: yellow;
+            padding: 0.3em 0.3em;
+            border-radius: 0.6em;
+        }
+
+.search_form, .search_formR {
+    width: 40%;
+    float: left;
+    position: absolute;
+    right: 1em;
+    top: 0.74em;
+}
+
+.search_formR {
+    top: 0.74em;
+}
+
+.search_form input {
+    font-size: 0.6em;
+    margin-right: 4px
+}
+
+.search_form label {
+    font-size: 0.7em;
+}
+
+.submit {
+    background-color: darkslategrey;
+    color: yellow;
+}
+
+.submit_link {
+    background-color: darkslategrey;
+    color: yellow;
+    padding: 0.3em 0.5em;
+    border-bottom-left-radius: 1em;
+}
+
+input {
+    font-size: 10px;
 }
