@@ -1,20 +1,24 @@
 ﻿@model  ODatamanager
 
 <div class="container">
-    <h5 class=" w-75 m-auto my-2">Student Registration Sheet</h5>
+    <h5 class ="my-2" >Student Registration Sheet</h5>
     <form method="post">
 
-        <div class="row gap-1 mb-2">
-            <label asp-for="@Model.student.FirstName" class="col-4">First Name</label>
-            <label asp-for="@Model.student.LastName" class="col-4">Last Name</label>
-            <label asp-for="@Model.student.Sex" class="col-3">Sex</label>
+        <div class="row gap-1 label_div">
+            <label asp-for="@Model.student.FirstName" class="col-3">First Name</label>
+            <label asp-for="@Model.student.LastName" class="col-3">Last Name</label>
+            <label asp-for="@Model.student.OtherNames" class="col-3">Other Names</label>
+
+            <label asp-for="@Model.student.Sex" class="col-2">Sex</label>
 
     </div>
 
-        <div class="row gap-1 mb-2">
-            <input asp-for="@Model.student.FirstName" class="col-4" />
-            <input asp-for="@Model.student.LastName" class="col-4"/>
-            <select asp-for="@Model.student.Sex"  class="col-3">
+        <div class="row gap-1 input_div">
+            <input asp-for="@Model.student.FirstName" class="col-3" />
+            <input asp-for="@Model.student.LastName" class="col-3"/>
+            <input asp-for="@Model.student.OtherNames" class="col-3" />
+
+            <select asp-for="@Model.student.Sex"  class="col-2">
                 <option>...Select...</option>
                 <option>Male</option>
                 <option>Female</option>
@@ -22,34 +26,39 @@
 
         </div>
 
-        <div class="row gap-2">
-            <label asp-for="@Model.student.Residance" class="col-4">Residance</label>
-            <label asp-for="@Model.student.BirthDate" class="col-4">Birth Date</label>
-            <label asp-for="@Model.student.Age" class="col-3">Age</label>
+        <div class="row gap-1 label_div">
+            <label asp-for="@Model.student.District" class="col-3">District</label>
+
+            <label asp-for="@Model.student.Residance" class="col-3">Village</label>
+            <label asp-for="@Model.student.BirthDate" class="col-3">Birth Date</label>
+            <label asp-for="@Model.student.Age" class="col-2">Age</label>
 
 
 
         </div>
 
-        <div class="row gap-1 mb-2">
-            <input asp-for="@Model.student.Residance" class="col-4" />
-            <input type="date" placeholder="2024-01-03" asp-for="@Model.student.BirthDate" class="col-4" />
-            <input type="number" asp-for="@Model.student.Age" class="col-3" />
+        <div class="row gap-1 input_div">
+            <input asp-for="@Model.student.District" class="col-3" />
+            <input asp-for="@Model.student.Residance" class="col-3" />
+
+            <input type="date" placeholder="2024-01-03" asp-for="@Model.student.BirthDate" class="col-3" />
+            <input type="number" asp-for="@Model.student.Age" class="col-2" />
 
         </div>
-        <div class="row gap-1 mb-2">
+        <div class="row gap-1 label_div">
             <label asp-for="@Model.student.Contact" class="col-3">Contact</label>
             <label asp-for="@Model.student.SchoolFees" class="col-3">School Fees</label>
-            <label asp-for="@Model.student.SchoolLevel" class="col-2">Level</label>
+            <label asp-for="@Model.student.SchoolLevel" class="col-3">Level</label>
             <label asp-for="@Model.student.Semester" class="col-2">Term</label>
 
         </div>
 
-        <div class="row gap-1 mb-2">
+        <div class="row gap-1 input_div" >
+
             <input asp-for="@Model.student.Contact" class="col-3" />
             <input asp-for="@Model.student.SchoolFees" class="col-3" />
 
-            <select asp-for="@Model.student.LevelId" class="col-3">
+            <select asp-for="@Model.SchoolLevelId" class="col-3">
                 <option>...Select...</option>
 
                 @foreach (var item in Model.schoolLevels)
@@ -58,13 +67,20 @@
                 }
             </select>
 
-            <input asp-for="@Model.student.Semester" class="col-2" />
+            <select asp-for="@Model.SemesterId" class="col-2">
+                <option>...Select...</option>
+
+                @foreach (var item in Model.Semesters)
+                {
+                    <option value="@item.SemesterId">@item.SemesterName</option>
+                }
+            </select>
+
 
         </div>
-        <hr/>
-        <h5>Guardian Details</h5>
-        <hr/>
-        <div class="row gap-1 mb-2">
+        <h5 class="my-3">Guardian Details</h5>
+        <div class="guardian_details">
+        <div class="row gap-1 label_div ">
             <label asp-for="@Model.student.Guardian.FirstName" class="col-3">First Name</label>
             <label asp-for="@Model.student.Guardian.LastName" class="col-3">Last Name</label>
             <label asp-for="@Model.student.Guardian.Relationship" class="col-3">Relationship</label>
@@ -72,7 +88,7 @@
             <label asp-for="@Model.student.Sex" class="col-2">Sex</label>
 
         </div>
-        <div class="row gap-1 mb-2">
+        <div class="row gap-1 input_div">
             <input asp-for="@Model.student.Guardian.FirstName" class="col-3" />
             <input asp-for="@Model.student.Guardian.LastName" class="col-3" />
             <input asp-for="@Model.student.Guardian.Relationship" class="col-3" />
@@ -81,9 +97,9 @@
                 <option>Male</option>
                 <option>Female</option>
             </select>
-
+            
         </div>
-        <div class="row gap-1 mb-2">
+        <div class="row gap-1 label_div">
             <label asp-for="@Model.student.Guardian.Residance" class="col-3">Residance</label>
             <label asp-for="@Model.student.Guardian.Contact" class="col-3">Contact</label>
             <label asp-for="@Model.student.Guardian.BirthDate" class="col-3">Birth Date</label>
@@ -92,15 +108,16 @@
 
         </div>
 
-        <div class="row gap-1 mb-2">
+        <div class="row gap-1 input_div">
             <input asp-for="@Model.student.Guardian.Residance" class="col-3" />
             <input asp-for="@Model.student.Guardian.Contact" class="col-3" />
             <input type="date"  asp-for="@Model.student.Guardian.BirthDate" class="col-3" />
             <input  type="number" asp-for="@Model.student.Guardian.Age" class="col-2" />         
 
         </div>
+        </div>
 
-        <input type="submit" class="btn btn-primary mt-4" value="Save"/>
+        <input type="submit" class="submit_btn" value="Save" />
     </form>
 
 

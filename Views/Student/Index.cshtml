@@ -1,4 +1,4 @@
-﻿@model ICollection<Student>
+﻿@model ICollection<FeesJoinStudent>
 
 <h5>Index Page</h5>
 
@@ -16,15 +16,19 @@
 
         </tr>
     </thead>
-
     <tbody>
         @foreach (var item in Model)
-        {            <tr>
+        {
+
+
+            <tr>
+
+
                 <td>@item.FirstName</td>
                 <td>@item.LastName</td>
                 <td>@item.Sex</td>
                 <td>@item.SchoolLevel.LevelName</td>
-                <td>@item.Semester</td>
+                <td>@item.Semester.SemesterName</td>
                 <td>@item.Residance</td>
 
 
@@ -41,10 +45,17 @@
                     </a>
 
                 </td>
-
-
-
+                <td>
+                    <a class="submit_link" asp-area="" asp-route-id="@item.StudentId" asp-controller="Student" asp-action="LevelCourses">
+                        Generate Report
+                    </a>
+                    </td>
             </tr>
+        <td>
+            <a class="submit_link" asp-area="" asp-route-id="@item.StudentId" asp-controller="Student" asp-action="StudentDetails">
+                View
+            </a>
+        </td>
 
 
         }

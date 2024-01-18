@@ -1,0 +1,46 @@
+﻿@model ODatamanager
+
+<h5>@Model.student.FirstName @Model.student.LastName Payment details</h5>
+<table class="table table-hover mt-5">
+
+    <thead>
+        <tr>
+
+            <th>Date Of Payment</th>
+            <th>Semester</th>
+
+            <th>Recieved By</th>
+            <th> Previous Balance</th>
+            <th>Amount</th>
+
+            <th>Balance</th>
+            <th>Reason</th>
+        </tr></thead>
+
+<tbody>
+
+
+@foreach(var item in Model.FeesPayments){
+
+    <tr>
+        <td>
+@item.DateOfPayment
+        </td>
+                <td> @item.Semester.SemesterName
+                </td>
+                <td>@item.RecievedBy
+                </td>
+                <td>
+                    @item.PrevBalance
+                </td>
+                <td> @item.Amount
+                </td>
+                <td>
+                    @item.Balance
+                </td>
+               
+                <td>@item.Reason</td>
+    </tr>
+}
+    </tbody>
+</table>

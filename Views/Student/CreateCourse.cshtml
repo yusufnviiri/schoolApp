@@ -1,0 +1,43 @@
+﻿@model ODatamanager
+
+<div class="container">
+    <h5 class="my-2">Course Entry Form</h5>
+
+    <form method="post">
+        <div class="row gap-1 label_div">
+            <label asp-for="@Model.Course.CourseName" class="col-3">Course Name</label>
+            <label asp-for="@Model.Course.CourseCode" class="col-2">Code</label>
+            <label asp-for="@Model.student.SchoolLevel" class="col-2">Level</label>
+            <label asp-for="@Model.student.Semester" class="col-2">Term</label>
+          
+
+        </div>
+
+        <div class="row gap-1 input_div">
+            <input asp-for="@Model.Course.CourseName" class="col-3" />
+            <input asp-for="@Model.Course.CourseCode" class="col-2" />     
+
+            <select asp-for="@Model.SchoolLevelId" class="col-2">
+                <option>...Select...</option>
+
+                @foreach (var item in Model.schoolLevels)
+                {
+                    <option value="@item.SchoolLevelId">@item.LevelName</option>
+                }
+            </select>
+
+            <select asp-for="@Model.SemesterId" class="col-2">
+                <option>...Select...</option>
+
+                @foreach (var item in Model.Semesters)
+                {
+                    <option value="@item.SemesterId">@item.SemesterName</option>
+                }
+            </select>
+
+            <input type="submit" class="submit_btnC  col-2" value="Add" />
+        </div>
+    </form>
+
+
+</div>

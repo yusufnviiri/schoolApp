@@ -3,6 +3,9 @@
     public class LevelData
     {
         public int LevelDataId { get; set; }
-        public Student Student { get; set; }= new Student();
+        public int StudentId { get; set; }
+        public int SchoolLevelId { get; set; }
+        public int SemesterId { get; set; }
+
     }
 }

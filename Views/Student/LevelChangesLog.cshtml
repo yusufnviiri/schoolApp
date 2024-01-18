@@ -1,0 +1,44 @@
+﻿@model ODatamanager
+
+<h5>@Model.student.FirstName @Model.student.LastName Registration Data</h5>
+<table class="table table-hover mt-5">
+
+    <thead>
+        <tr>
+
+            <th>Date Of Registration</th>
+
+            <th>Academic Level</th>
+            <th>Semester</th>
+
+            <th> School Fees</th>
+
+          
+        </tr>
+    </thead>
+
+    <tbody>
+
+
+        @foreach (var item in Model.students)
+        {
+
+            <tr>
+                <td>
+                    @item.RegistrationDate
+                </td>
+                <td>
+                    @item.SchoolLevel.LevelName
+                </td>
+                <td>
+                    @item.Semester.SemesterName
+                </td>
+                <td>
+                    @item.SchoolFees
+                </td>
+               
+         
+            </tr>
+        }
+    </tbody>
+</table>

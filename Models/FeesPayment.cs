@@ -7,8 +7,8 @@ namespace schoolApp.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FeespaymentId { get; set; }
         public DateTime DateOfPayment { get; set; }= DateTime.Now;
-        public string Semester { get; set; }
-        public string StudentLevel { get; set; }
+        public  Semester Semester { get; set; }
+        public SchoolLevel StudentLevel { get; set; }
         public int  StudentId { get; set; }
         public decimal Amount { get;set; }
         public decimal Balance { get; set; }

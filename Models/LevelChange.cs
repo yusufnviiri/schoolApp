@@ -7,8 +7,8 @@ namespace schoolApp.Models
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int LevelChangeId { get; set; }
-        public string LevelName { get; set;}
-        public string Semester { get; set;} 
+        public SchoolLevel SchoolLevel { get; set;}
+        public Semester Semester { get; set;} 
         public int StudentId { get; set;}
         public decimal schoolFess   { get; set;}
     }

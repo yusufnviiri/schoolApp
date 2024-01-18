@@ -3,6 +3,10 @@
     <h5 class=" w-25 m-auto my-2">School Fees</h5>
     <form method="post">
         <input type="hidden" asp-for="@Model.StudentId" class="col-3" />
+        <input type="hidden" asp-for="@Model.LevelId" class="col-3" />
+        <input type="hidden" asp-for="@Model.SemesterId" class="col-3" />
+
+
 
         <div class="row gap-1 mb-2">
             <label asp-for="@Model.FirstName" class="col-3">First Name</label>
@@ -14,7 +18,7 @@
         <div class="row gap-1 mb-2">
             <input asp-for="@Model.FirstName" class="col-3" />
             <input asp-for="@Model.LastName" class="col-3" />
-            <input asp-for="@Model.SchoolLevel" class="col-3" />
+            <input asp-for="@Model.SchoolLevel.LevelName" class="col-3" />
             <input type="number" asp-for="@Model.SchoolFees" class="col-2
 " />      
 
@@ -23,7 +27,6 @@
             <label asp-for="@Model.PrevBalance" class="col-3">Previus Balance</label>
             <label asp-for="@Model.Balance" class="col-3">Balance</label>
             <label  asp-for="@Model.Amount" class="col-3">Amount Paid</label>
-            <label asp-for="@Model.Semester" class="col-2">Semester </label>
 
 
         </div>
@@ -31,20 +34,21 @@
             <input asp-for="@Model.PrevBalance" class="col-3" />
             <input asp-for="@Model.Balance" class="col-3" />
             <input type="number" asp-for="@Model.Amount" class="col-3" />
-            <input asp-for="@Model.Semester" class="col-2" />
 
         </div>
         <div class="row gap-1 mb-2">
+            <label asp-for="@Model.Semester" class="col-2">Semester </label>
+
              <label asp-for="@Model.RecievedBy" class="col-3">Recieved By</label>
             <label asp-for="@Model.Reason" class="col-5">Reason</label>
-            <label asp-for="@Model.SchoolLevel" class="col-3">Level</label>
 
 
         </div>
         <div class="row gap-1 mb-2">
+            <input asp-for="@Model.Semester.SemesterName" class="col-2" />
+
             <input asp-for="@Model.RecievedBy" class="col-3" />
             <input placeholder="School Fees Payment" asp-for="@Model.Reason" class="col-5"  required/>
-            <input asp-for="@Model.SchoolLevel" class="col-3" />
 
         </div>
 
