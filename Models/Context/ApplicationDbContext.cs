@@ -29,8 +29,12 @@ namespace schoolApp.Models.Context
                 
         }
 
-
+        public DbSet<Staff> Staffs { get; set; }
+        public DbSet<LibItem> LibItems { get; set; }
+        public DbSet<LibUser> LibUsers { get; set; }
+        public DbSet<Payment> Payments { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<GeneralLedger> GeneralLedger { get; set; }
         public DbSet<SchoolLevel> SchoolLevels { get; set; }
         public DbSet<Guardian> Guardians { get; set; }
         public DbSet<FeesPayment> FeesPayments { get; set; }

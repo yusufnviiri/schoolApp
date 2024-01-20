@@ -1,0 +1,46 @@
+﻿@model ICollection<Staff>
+
+<h5>Index Page</h5>
+
+<table class="table table-hover mt-5">
+
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Sex</th>
+            <th>Category</th>
+            <th>Job Title</th>
+            <th>Qualification</th>
+            <th>Residance</th>
+            <th>Contact</th>
+            <th>Date of Contract</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        { <tr>         <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Sex</td>            
+                <td>@item.Category</td>
+                <td>@item.JobTitle</td>
+                <td>@item.Qualification</td>
+                <td>@item.Residance</td>
+
+                <td>@item.Contact</td>
+                <td>@item.EmployementDate.Day<span>/</span>@item.EmployementDate.Month<span>/</span>@item.EmployementDate.Year</td>
+
+                <td>
+                    <a class="submit_link" asp-area="" asp-route-id="@item.StaffId" asp-controller="Staff" asp-action="Payment">
+                        Payments
+                    </a>
+                </td>
+            </tr>
+        
+
+
+        }
+    </tbody>
+
+
+</table>

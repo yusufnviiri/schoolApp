@@ -32,11 +32,11 @@ thead tr, .table_bold td {
     color: forestgreen;
     font-weight:bold;
 }
-
-
+/*td,th{white-space:nowrap;}
+*/
 menu ul, .student_actions ul {
     display: flex;
-    width: 60%;
+    width: 100%;
 }
     .student_actions ul{
         width:90%;

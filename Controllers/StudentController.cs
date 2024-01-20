@@ -11,6 +11,7 @@ namespace schoolApp.Controllers
     {
         private readonly ApplicationDbContext _db;
         public ICollection<Student> Students { get; set; }
+        
         public Student StudentO { get; set; }
         public LevelChange LevelChange { get; set; } = new LevelChange();
         public LevelData LevelData { get; set; } = new LevelData();
@@ -114,7 +115,11 @@ namespace schoolApp.Controllers
         //       pay school fees post
         [HttpPost]
         public async Task<IActionResult> PayFees(FeesJoinStudent transaction)
-        {// compute fees balaces
+        {
+            var ledgerBalances = new GeneralLedger();
+            var lastTransaction = await _db.GeneralLedger.ToListAsync();
+            
+            // compute fees balaces
             var student = await _db.Students.FindAsync(transaction.StudentId);
             var newTrans = new FeesPayment();
             newTrans.StudentId = student.StudentId;
@@ -127,6 +132,18 @@ namespace schoolApp.Controllers
             newTrans.Reason = transaction.Reason;
             newTrans.Semester = await _db.Semesters.FindAsync(transaction.SemesterId);
             await _db.FeesPayments.AddAsync(newTrans);
+            ledgerBalances.Amount = newTrans.Amount;
+            ledgerBalances.Reason = newTrans.Reason;
+            if (lastTransaction.LastOrDefault() != null)
+            {
+                ledgerBalances.TotalIncome = lastTransaction.LastOrDefault().TotalIncome+ newTrans.Amount;
+            }
+            else
+            {
+                ledgerBalances.TotalIncome = newTrans.Amount;
+            }
+           
+            await _db.GeneralLedger.AddAsync(ledgerBalances);
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -393,5 +410,7 @@ namespace schoolApp.Controllers
             return View(ODatamanager);
         
         }
+      
+
         }
 }

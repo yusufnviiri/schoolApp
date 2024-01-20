@@ -3,6 +3,7 @@
     public class ODatamanager
     {
         public Student student { get; set; }=new Student();
+        public Staff Staff { get; set; } =new Staff();
         public List<SchoolLevel> schoolLevels { get; set; }= new List<SchoolLevel>();
         public List<Semester> Semesters { get; set; } = new List<Semester>();
         public int SemesterId { get; set; }

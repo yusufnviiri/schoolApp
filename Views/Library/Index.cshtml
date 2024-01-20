@@ -1,0 +1,60 @@
+﻿@model IEnumerable<LibItem>
+<div class="container">
+
+    <h5 class=" w-75 m-auto my-2">  Library Item List</h5>
+
+
+    <table class="table table-hover mt-5">
+
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Category</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Author</td>
+                    <td>@item.Description</td>
+                    <td>@item.Category</td>
+                    <td>@item.Quantity</td>
+
+
+
+
+
+                    <td>
+                        <a class="submit_link" asp-area="" asp-route-id="@item.LibItemId" asp-controller="Student" asp-action="AddMarksToAssesment">
+                            Borrow
+                        </a>
+                    </td>
+
+
+                </tr>
+
+            }
+        </tbody>
+
+
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

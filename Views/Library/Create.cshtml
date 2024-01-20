@@ -1,0 +1,44 @@
+﻿@model LibItem
+
+<div class="container">
+    <h5 class="my-2">Library Item Declaration Sheet</h5>
+    <form method="post">
+
+        <div class="row gap-1 label_div">
+            <label asp-for="@Model.Title" class="col-4">Title</label>
+            <label asp-for="@Model.Author" class="col-4">Author</label>
+            <label asp-for="@Model.Quantity" class="col-2">Quantity</label>
+
+        </div>
+
+        <div class="row gap-1 input_div">
+            <input asp-for="@Model.Title" class="col-4" />
+            <input asp-for="@Model.Author" class="col-4" />
+            <input type="number" asp-for="@Model.Quantity" class="col-2" />         
+
+        </div>
+
+        <div class="row gap-1 label_div">
+            <label asp-for="@Model.Description" class="col-4">Description</label>
+            <label asp-for="@Model.Category" class="col-4">Category</label>
+        </div>
+
+        <div class="row gap-1 input_div">
+            <input asp-for="@Model.Description" class="col-4" />
+            <select asp-for="@Model.Category" class="col-4">
+                <option>...Select...</option>
+                <option>Text Book</option>
+                <option>Magazine</option>
+                <option>Manual</option>
+                <option>Report</option>
+                <option>Research Paper</option>
+            </select>
+
+        </div> 
+
+        <input type="submit" class="submit_btn" value="Save" />
+    </form>
+
+
+
+</div>
