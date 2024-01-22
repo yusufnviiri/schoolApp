@@ -1,4 +1,4 @@
-## School Management system
+﻿## School Management system
     This project is designed to manage school resources and daily operations
 ## Major Cornerstones of the project
     - Record a student details while keeping recordes in case a student changes semester
@@ -25,10 +25,23 @@
     - MySQL management studio
     - DotNet framework core 6
 ## Getting Started
-    - Clone Repository
-    - cd 
+    - git init
+    - Clone Repository (https://github.com/yusufnviiri/schoolApp.git)
+    - cd schoolApp
     - update nuggets
     - Run Project
-## Author
-    -
+    - Enjoy
+### 👤 Author
+## 👤 Yusuf Nviiri
 
+    - GitHub: [@yusufnviiri](https://github.com/yusufnviiri)
+    - Twitter: [@YNviiri](https://twitter.com/YNviiri)
+    - LinkedIn: [yusufnviiri](https://www.linkedin.com/in/yusufnviiri)    
+
+### 🤝 Contributing
+
+    - Contributions,code reviews and feature requests are all welcome
+
+### Show your support
+
+    - Give a ⭐️ if you liked this project
