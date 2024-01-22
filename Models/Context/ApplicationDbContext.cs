@@ -28,7 +28,7 @@ namespace schoolApp.Models.Context
 
                 
         }
-
+        public DbSet<User> Users { get; set; }
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<LibItem> LibItems { get; set; }
         public DbSet<LibUser> LibUsers { get; set; }

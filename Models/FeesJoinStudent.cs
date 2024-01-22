@@ -29,5 +29,9 @@
         public int MonthB { get; set; }
         public int YearB { get; set; }
         public Guardian? Guardian { get; set; }
+        public LibItem libItem { get; set; }
+        public int Quantity { get; set; }
+        public Student student { get; set; }
+        public DateTime Date { get; set; }  
     }
 }

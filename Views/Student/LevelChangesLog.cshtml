@@ -2,28 +2,17 @@
 
 <h5>@Model.student.FirstName @Model.student.LastName Registration Data</h5>
 <table class="table table-hover mt-5">
-
     <thead>
         <tr>
-
             <th>Date Of Registration</th>
-
             <th>Academic Level</th>
             <th>Semester</th>
-
-            <th> School Fees</th>
-
-          
+            <th> School Fees</th>          
         </tr>
     </thead>
-
     <tbody>
-
-
         @foreach (var item in Model.students)
-        {
-
-            <tr>
+        {<tr>
                 <td>
                     @item.RegistrationDate
                 </td>
@@ -35,9 +24,7 @@
                 </td>
                 <td>
                     @item.SchoolFees
-                </td>
-               
-         
+                </td>         
             </tr>
         }
     </tbody>

@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - schoolApp</title>
+    <title>@ViewData["Title"] School Management System</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/schoolApp.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <menu class="container">
+        <menu >
             <ul>
                 <li>
                     <a class="  " asp-area="" asp-controller="Student" asp-action="Index">Students</a>
@@ -19,15 +19,15 @@
                     <a class=" " asp-area="" asp-controller="Student" asp-action="Create">New Student</a>
                 </li>
                 <li>
-                    <a class="" asp-area="" asp-controller="Student" asp-action="CreateCourse">
-                      Add Course
-                    </a>
-                </li>
-                <li>
                     <a class="" asp-area="" asp-controller="Student" asp-action="ViewCourses">
                         Courses
                     </a>
                 </li>
+                <li>
+                    <a class="" asp-area="" asp-controller="Student" asp-action="CreateCourse">
+                      New Course
+                    </a>
+                </li>             
                 <li>
                     <a class="  " asp-area="" asp-controller="Staff" asp-action="Index">Staff Members</a>
                 </li>
@@ -35,12 +35,15 @@
                     <a class="  " asp-area="" asp-controller="Staff" asp-action="Create">New Staff</a>
                 </li>
                 <li>
+                    <a class="  " asp-area="" asp-controller="Library" asp-action="Index">Library Items</a>
+                </li>
+                <li>
                     <a class="  " asp-area="" asp-controller="Library" asp-action="Create">New Library Item</a>
                 </li>
                 <li>
-                    <a class="  " asp-area="" asp-controller="Library" asp-action="Index">Library Items</a>
-                </li>              
-              
+                    <a class="  " asp-area="" asp-controller="Library" asp-action="LibUsers"> Library Users</a>
+                </li>
+
             </ul>
 
         </menu>
@@ -51,11 +54,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - schoolApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+  
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

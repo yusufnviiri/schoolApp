@@ -1,0 +1,29 @@
+﻿@model ICollection<FeesJoinStudent>
+<h5>Library Item Borrowing Sheet</h5>
+<table class="table table-hover  mt-5">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Item Title</th>
+            <th> Author</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Return Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.student.FirstName</td>
+                <td>@item.student.LastName</td>
+                 <td>@item.libItem.Title</td>
+                <td>@item.libItem.Author</td>
+                <td>@item.libItem.Category</td>
+                <td>@item.Quantity</td>
+                <td>@item.Date.Day<span>/</span>@item.Date.Month<span>/</span>@item.Date.Year</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -17,6 +17,10 @@
         public StudentAssessemet StudentAssessemet { get; set; }
         public List<FeesPayment> FeesPayments { get; set; } = new List<FeesPayment>();
         public IEnumerable<Student> students { get; set; }
+        public ICollection<LibItem> LibItems { get; set; }
+
         public IEnumerable<FeesJoinStudent> FeesJoinStudents { get; set; }
+    
+        
     }
 }

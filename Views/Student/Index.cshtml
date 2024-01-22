@@ -1,9 +1,6 @@
 ﻿@model ICollection<FeesJoinStudent>
-
 <h5>Index Page</h5>
-
 <table class="table table-hover mt-5">
-
     <thead>
         <tr>
             <th>First Name</th>
@@ -12,54 +9,38 @@
             <th>Level</th>
             <th>Semester</th>
             <th>Residence</th>
-
-
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
-        {
-
-
-            <tr>
-
-
-                <td>@item.FirstName</td>
+        {<tr>   <td>@item.FirstName</td>
                 <td>@item.LastName</td>
                 <td>@item.Sex</td>
                 <td>@item.SchoolLevel.LevelName</td>
                 <td>@item.Semester.SemesterName</td>
                 <td>@item.Residance</td>
-
-
-
                 <td>
                     <a class="submit_link" asp-area="" asp-route-id="@item.StudentId" asp-controller="Student" asp-action="PayFees">
                         Pay Fees
                     </a>
                 </td>
-
                 <td>
                     <a class="submit_link" asp-area="" asp-route-id="@item.StudentId" asp-controller="Student" asp-action="NewSemesterReg">
                         New Term 
                     </a>
-
                 </td>
                 <td>
                     <a class="submit_link" asp-area="" asp-route-id="@item.StudentId" asp-controller="Student" asp-action="LevelCourses">
                         Generate Report
                     </a>
                     </td>
+                <td>
+                    <a class="submit_link" asp-area="" asp-route-id="@item.StudentId" asp-controller="Student" asp-action="StudentDetails">
+                        View
+                    </a>
+                </td>
             </tr>
-        <td>
-            <a class="submit_link" asp-area="" asp-route-id="@item.StudentId" asp-controller="Student" asp-action="StudentDetails">
-                View
-            </a>
-        </td>
-
-
+       
         }
     </tbody>
-
-
 </table>

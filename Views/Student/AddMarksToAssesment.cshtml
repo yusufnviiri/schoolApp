@@ -1,6 +1,5 @@
 ﻿@model ODatamanager
 <div class="container">
-
     <h5 class=" w-75 m-auto my-2">Asseeement  for @Model.student.FirstName @Model.student.LastName</h5>
     <form method="post">
         <input asp-for="@Model.student.StudentId" hidden />
@@ -11,47 +10,13 @@
             <label class="col-2">Mid Exam</label>
             <label class="col-2">Final</label>
         </div>
-
         <input asp-for="@Model.Course.CourseId" hidden />
             <div class="row gap-1 mb-2">
                 <input class="col-3" asp-for="@Model.Course.CourseName" disabled />
             <input class="col-2" asp-for="@Model.Course.Assessement.Cat1" />
             <input class="col-2" asp-for="@Model.Course.Assessement.Cat2" />
-
             <input class="col-2" asp-for="@Model.Course.Assessement.MidExam" />
-
             <input class="col-2" asp-for="@Model.Course.Assessement.Final" />
-
             </div>
-      
-
-
-
-
-
         <input type="submit" class="btn btn-primary mt-4" value="Save Report" />
-
-
-
-
-
-
-
-
-
-
-    </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
+    </form></div>

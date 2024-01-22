@@ -1,9 +1,7 @@
 ﻿@model ODatamanager
 <div class="container">
-
     <h5 class=" w-75 m-auto my-2">Report for @Model.student.FirstName @Model.student.LastName</h5>
     <table class="table table-hover mt-2">
-
         <thead>
             <tr>
                 <th>Subject</th>
@@ -18,31 +16,14 @@
         <tbody>
             @foreach(var item in Model.FeesJoinStudents){
             <tr class="table_data">
-
                 <td>@item.Course.CourseName</td>
                     <td>@item.Assessement.Cat1</td>
-
                     <td>@item.Assessement.Cat2</td>
                     <td>@item.Assessement.MidExam</td>
                     <td>@item.Assessement.Final</td>
                     <td>@item.Assessement.TotalScore</td>
-                    <td>@item.Assessement.Grade</td>                
-
-
+                    <td>@item.Assessement.Grade</td> 
                 </tr>}
                 </tbody>
                 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>

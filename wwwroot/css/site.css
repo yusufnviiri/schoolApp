@@ -21,8 +21,7 @@ body {
 
 tbody tr {
     font-size: 10px;
-    color: black;
-}
+    color: black;}
 a {
     text-decoration: none;
 }
@@ -30,32 +29,36 @@ a {
 thead tr, .table_bold td {
     font-size: 10px;
     color: forestgreen;
-    font-weight:bold;
+    font-weight: bold;
 }
-/*td,th{white-space:nowrap;}
-*/
+
+td, th {
+    white-space: nowrap;
+}
+
 menu ul, .student_actions ul {
     display: flex;
     width: 100%;
 }
-    .student_actions ul{
-        width:90%;
-        margin:auto;
-    }
 
-    menu ul li, .student_actions ul li {
+.student_actions ul {
+    width: 90%;
+    margin: auto;
+}
+
+ menu ul li, .student_actions ul li {
         list-style: none;
         margin-right: 0.3em;
     }
-
-        menu ul li a, menu ul li a span, .student_actions ul li a {
+menu ul li a, menu ul li a span, .student_actions ul li a {
             list-style: none;
-            font-size: 0.75em;
+            font-size: 0.55em;
             background-color: darkslategrey;
-            color: yellow;
+            white-space: nowrap;
+            color: yellowgreen;
             padding: 0.3em 0.3em;
             border-radius: 0.6em;
-  }
+}
 
 .search_form, .search_formR {
     width: 40%;
@@ -75,7 +78,7 @@ menu ul, .student_actions ul {
 }
 
 .search_form label {
-    font-size: 0.7em;
+    font-size: 0.6em;
 }
 
 .submit {
@@ -89,11 +92,14 @@ menu ul, .student_actions ul {
     padding: 0.3em 0.5em;
     border-bottom-left-radius: 1em;
     margin-top: 0.5em;
+    font-size: 0.8em;
 }
+
 .submit_btn {
     border-radius: 0.4em;
     padding-bottom: 1.5em;
 }
+
 .submit_btnC {
     background-color: darkslategrey;
     color: yellow;
@@ -102,38 +108,39 @@ menu ul, .student_actions ul {
     padding-bottom: 1.5em;
     margin: 0;
 }
-
-    input, select, label {
-        font-size: 10px;
-        height: 2em;
-        font-weight: 700;
-        padding-left: 1px;
-    }
+input, select, label {
+    font-size: 10px;
+    height: 2em;
+    font-weight: 700;
+    padding-left: 1px;
+}
 .guardian_details label {
     font-weight: 900;
 }
+
 .input_div {
     margin-bottom: 0.1em;
 }
 
 h5 {
-    color:darkslategrey;
-    font-size:0.9em;
+    color: darkslategrey;
+    font-size: 0.9em;
     text-transform: uppercase;
     width: fit-content;
     margin: auto;
-    font-family:Gabriola;
-    font-weight:bold;
-    text-decoration:underline;
+    font-family: Gabriola;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
-.container,form{
-    width:100%;
-    margin:auto;
+.container, form {
+    width: 100%;
+    margin: auto;
 }
-.student_details{
-    display:flex;
-    justify-content:space-between;
-    width:95%;
-    margin:auto;
-    }
+
+.student_details {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+}

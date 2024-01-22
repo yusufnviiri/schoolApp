@@ -9,10 +9,7 @@
         <div class="row gap-1 mb-2">
             <label asp-for="@Model.student.FirstName" class="col-4">First Name</label>
             <label asp-for="@Model.student.LastName" class="col-4">Last Name</label>
-            <label asp-for="@Model.student.Sex" class="col-3">Sex</label>
-
-    </div>
-
+            <label asp-for="@Model.student.Sex" class="col-3">Sex</label> </div>
         <div class="row gap-1 mb-2">
             <input asp-for="@Model.student.FirstName" class="col-4" />
             <input asp-for="@Model.student.LastName" class="col-4" />
@@ -21,23 +18,16 @@
                 <option>Male</option>
                 <option>Female</option>
             </select>
-
-        </div>
-
-     
+        </div>     
         <div class="row gap-1 mb-2">
             <label asp-for="@Model.student.SchoolFees" class="col-3">School Fees</label>
             <label asp-for="@Model.SchoolLevelId" class="col-2">Level</label>
             <label asp-for="@Model.SemesterId" class="col-2">Term</label>
-
         </div>
-
         <div class="row gap-1 mb-2">
             <input asp-for="@Model.student.SchoolFees" class="col-3" required />
-
             <select asp-for="@Model.SchoolLevelId" class="col-3" required>
                 <option>...Select...</option>
-
                 @foreach (var item in Model.schoolLevels)
                 {
                     <option value="@item.SchoolLevelId">@item.LevelName</option>
@@ -46,7 +36,6 @@
 
             <select asp-for="@Model.SemesterId" class="col-3">
                 <option>...Select...</option>
-
                 @foreach (var item in Model.Semesters)
                 {
                     <option value="@item.SemesterId">@item.SemesterName</option>
@@ -54,6 +43,5 @@
             </select>
         </div>
         <input type="submit" class="btn btn-primary mt-4" value="Save" />
-
         </form>
         </div>

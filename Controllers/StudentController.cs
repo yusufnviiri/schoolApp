@@ -216,8 +216,6 @@ namespace schoolApp.Controllers
             item.Course.Semester = await _db.Semesters.FindAsync(item.SemesterId);
             await _db.Courses.AddAsync(item.Course);
             await _db.SaveChangesAsync();
-
-
             return RedirectToAction("Index");
 
         }
@@ -301,13 +299,9 @@ namespace schoolApp.Controllers
                 await _db.StudentAssessemets.AddAsync(studentAssessment);
                 await _db.SaveChangesAsync();
             }
-
-
-
-
-
             return RedirectToAction("Index");
         }
+        //get assessements into report card
         public async Task<IActionResult> ReportCard(int id)
         {
             var Courses = await _db.Courses.Include(p => p.SchoolLevel).Include(k => k.Semester).Include(l => l.Assessement).ToListAsync();
@@ -407,10 +401,8 @@ namespace schoolApp.Controllers
                            }).ToList();
             ODatamanager.FeesJoinStudents = results;
             ODatamanager.student = studentList.FirstOrDefault();
-            return View(ODatamanager);
-        
-        }
-      
+            return View(ODatamanager);        
+        }   
 
         }
 }
